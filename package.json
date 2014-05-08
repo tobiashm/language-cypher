@@ -1,6 +1,6 @@
 {
   "name": "language-cypher",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cypher language support in Atom",
   "repository": "https://github.com/tobiashm/language-cypher",
   "license": "MIT",
