@@ -1,0 +1,7 @@
+{
+  ".source.cypher": {
+    "editor": {
+      "commentStart": "// "
+    }
+  }
+}
