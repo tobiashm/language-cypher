@@ -62,7 +62,7 @@
     "keywords": {
       "patterns": [
         {
-          "match": "(?i)\\b(START|MATCH|WHERE|RETURN|UNION|USING|FOREACH|WITH|AS|LIMIT|SKIP|UNWIND|HAS|DISTINCT|OPTIONAL\\s+MATCH|ORDER\\s+BY)\\b",
+          "match": "(?i)\\b(START|MATCH|WHERE|RETURN|UNION|FOREACH|WITH|AS|LIMIT|SKIP|UNWIND|HAS|DISTINCT|OPTIONAL\\s+MATCH|ORDER\\s+BY)\\b",
           "name": "keyword.control.clause.cypher"
         },
         {
@@ -70,7 +70,7 @@
           "name": "keyword.control.case.cypher"
         },
         {
-          "match": "(?i)\\b(FIELDTERMINATOR|USING\\s+PERIODIC\\s+COMMIT|WITH\\s+HEADERS|LOAD\\s+CSV|FROM)\\b",
+          "match": "(?i)\\b(FIELDTERMINATOR|USING\\s+PERIODIC\\s+COMMIT|HEADERS|LOAD\\s+CSV|FROM)\\b",
           "name": "keyword.data.import.cypher"
         },
         {
