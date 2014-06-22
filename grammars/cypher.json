@@ -66,8 +66,24 @@
     "keywords": {
       "patterns": [
         {
-          "match": "(?i)\\b(UNWIND|HAS|MERGE|START|MATCH|ELSE|WHERE|END|THEN|RETURN|CASE|WHEN|UNION|USING|CREATE|DELETE|SET|FOREACH|WITH|CYPHER|DISTINCT|AS|REMOVE|LIMIT|SKIP|FROM|FIELDTERMINATOR|SET|USING\\s+INDEX|ON\\s+CREATE|ON\\s+MATCH|CREATE\\s+INDEX\\s+ON|DROP\\s+INDEX\\s+ON|CREATE\\s+CONSTRAINT\\s+ON|DROP\\s+CONSTRAINT\\s+ON|USING\\s+PERIODIC\\s+COMMIT|WITH\\s+HEADERS|LOAD\\s+CSV|CREATE\\s+UNIQUE|OPTIONAL\\s+MATCH|ORDER\\s+BY)\\b",
+          "match": "(?i)\\b(UNWIND|HAS|START|MATCH|WHERE|RETURN|UNION|USING|FOREACH|WITH|DISTINCT|AS|LIMIT|SKIP|OPTIONAL\\s+MATCH|ORDER\\s+BY)\\b",
           "name": "keyword.control.clause.cypher"
+        },
+        {
+          "match": "(?i)\\b(ELSE|END|THEN|CASE|WHEN)\\b",
+          "name": "keyword.control.case.cypher"
+        },
+        {
+          "match": "(?i)\\b(MERGE|CREATE|DELETE|SET|REMOVE|ON\\s+CREATE|ON\\s+MATCH|CREATE\\s+UNIQUE)\\b",
+          "name": "keyword.data.definition.cypher"
+        },
+        {
+          "match": "(?i)\\b(FIELDTERMINATOR|USING\\s+PERIODIC\\s+COMMIT|WITH\\s+HEADERS|LOAD\\s+CSV|FROM)\\b",
+          "name": "keyword.data.import.cypher"
+        },
+        {
+          "match": "(?i)\\b(USING\\s+INDEX|CREATE\\s+INDEX\\s+ON|DROP\\s+INDEX\\s+ON|CREATE\\s+CONSTRAINT\\s+ON|DROP\\s+CONSTRAINT\\s+ON)\\b",
+          "name": "keyword.other.indexes.cypher"
         },
         {
           "match": "(?i)\\b(DESC|ASC)\\b",
