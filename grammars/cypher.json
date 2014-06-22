@@ -62,7 +62,7 @@
     "keywords": {
       "patterns": [
         {
-          "match": "(?i)\\b(UNWIND|HAS|START|MATCH|WHERE|RETURN|UNION|USING|FOREACH|WITH|DISTINCT|AS|LIMIT|SKIP|OPTIONAL\\s+MATCH|ORDER\\s+BY)\\b",
+          "match": "(?i)\\b(START|MATCH|WHERE|RETURN|UNION|USING|FOREACH|WITH|AS|LIMIT|SKIP|UNWIND|HAS|DISTINCT|OPTIONAL\\s+MATCH|ORDER\\s+BY)\\b",
           "name": "keyword.control.clause.cypher"
         },
         {
@@ -154,7 +154,7 @@
         },
         {
           "comment": "List of Cypher built-in functions from http://docs.neo4j.org/chunked/milestone/query-function.html",
-          "match": "(?i)\\b(count|sum|avg|max|min|percentile_disc|percentile_cont|collect)(?=\\s*\\()",
+          "match": "(?i)\\b(COUNT|sum|avg|max|min|stdev|stdevp|percentileDisc|percentileCont|collect)(?=\\s*\\()",
           "name": "support.function.aggregation.cypher"
         },
         {
