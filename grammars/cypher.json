@@ -52,11 +52,7 @@
         {
           "match": "(?i)\\b(TRUE|FALSE)\\b",
           "name": "constants.language.bool.cypher"
-        }
-      ]
-    },
-    "constants": {
-      "patterns": [
+      },
         {
           "match": "(?i)\\b(NULL)\\b",
           "name": "constants.language.missing.cypher"
