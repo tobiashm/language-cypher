@@ -74,16 +74,16 @@
           "name": "keyword.control.case.cypher"
         },
         {
-          "match": "(?i)\\b(MERGE|CREATE|DELETE|SET|REMOVE|ON\\s+CREATE|ON\\s+MATCH|CREATE\\s+UNIQUE)\\b",
-          "name": "keyword.data.definition.cypher"
-        },
-        {
           "match": "(?i)\\b(FIELDTERMINATOR|USING\\s+PERIODIC\\s+COMMIT|WITH\\s+HEADERS|LOAD\\s+CSV|FROM)\\b",
           "name": "keyword.data.import.cypher"
         },
         {
           "match": "(?i)\\b(USING\\s+INDEX|CREATE\\s+INDEX\\s+ON|DROP\\s+INDEX\\s+ON|CREATE\\s+CONSTRAINT\\s+ON|DROP\\s+CONSTRAINT\\s+ON)\\b",
           "name": "keyword.other.indexes.cypher"
+        },
+        {
+          "match": "(?i)\\b(MERGE|DELETE|SET|REMOVE|ON\\s+CREATE|ON\\s+MATCH|CREATE\\s+UNIQUE|CREATE)\\b",
+          "name": "keyword.data.definition.cypher"
         },
         {
           "match": "(?i)\\b(DESC|ASC)\\b",
