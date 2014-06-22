@@ -2,7 +2,8 @@
   "scopeName": "source.cypher",
   "fileTypes": [
     "cql",
-    "cyp"
+    "cyp",
+    "cypher"
   ],
   "name": "Cypher",
   "patterns": [
@@ -49,15 +50,23 @@
     "constants": {
       "patterns": [
         {
-          "match": "\\bTRUE|true|FALSE|false\\b",
+          "match": "(?i)\\b(TRUE|FALSE)\\b",
           "name": "constants.language.bool.cypher"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "match": "(?i)\\b(NULL)\\b",
+          "name": "constants.language.missing.cypher"
         }
       ]
     },
     "keywords": {
       "patterns": [
         {
-          "match": "(?i)\\b(MERGE|START|MATCH|WHERE|RETURN|CREATE|DELETE|SET|FOREACH|WITH|CYPHER|DISTINCT|AS|LIMIT|SKIP|UNIQUE|ORDER\\s+BY)\\b",
+          "match": "(?i)\\b(UNWIND|HAS|MERGE|START|MATCH|ELSE|WHERE|END|THEN|RETURN|CASE|WHEN|UNION|USING|CREATE|DELETE|SET|FOREACH|WITH|CYPHER|DISTINCT|AS|REMOVE|LIMIT|SKIP|FROM|FIELDTERMINATOR|SET|USING\\s+INDEX|ON\\s+CREATE|ON\\s+MATCH|CREATE\\s+INDEX\\s+ON|DROP\\s+INDEX\\s+ON|CREATE\\s+CONSTRAINT\\s+ON|DROP\\s+CONSTRAINT\\s+ON|USING\\s+PERIODIC\\s+COMMIT|WITH\\s+HEADERS|LOAD\\s+CSV|CREATE\\s+UNIQUE|OPTIONAL\\s+MATCH|ORDER\\s+BY)\\b",
           "name": "keyword.control.clause.cypher"
         },
         {
@@ -89,7 +98,7 @@
             },
             {
               "match": "(\\*)",
-              "name": "keyword.control.starting-function-params,cypher"
+              "name": "keyword.control.starting-function-params.cypher"
             },
             {
               "include": "#comments"
@@ -108,7 +117,7 @@
       "patterns": [
         {
           "comment": "List of Cypher built-in functions from http://docs.neo4j.org/chunked/milestone/query-function.html",
-          "match": "(?i)\\b(NOT)(?=\\s*\\()",
+          "match": "(?i)\\b((NOT)(?=\\s*\\()|IS\\s+NULL|IS\\s+NOT\\s+NULL)",
           "name": "keyword.control.function.boolean.cypher"
         },
         {
@@ -118,17 +127,17 @@
         },
         {
           "comment": "List of Cypher built-in functions from http://docs.neo4j.org/chunked/milestone/query-function.html",
-          "match": "(?i)\\b(LENGTH|TYPE|ID|COALESCE|HEAD|LAST)(?=\\s*\\()",
+          "match": "(?i)\\b(LENGTH|TYPE|ID|COALESCE|HEAD|LAST|TIMESTAMP|STARTNODE|ENDNODE|TOINT|TOFLOAT)(?=\\s*\\()",
           "name": "support.function.scalar.cypher"
         },
         {
           "comment": "List of Cypher built-in functions from http://docs.neo4j.org/chunked/milestone/query-function.html",
-          "match": "(?i)\\b(NODES|RELATIONSHIPS|EXTRACT|FILTER|TAIL|RANGE|REDUCE)(?=\\s*\\()",
+          "match": "(?i)\\b(NODES|RELATIONSHIPS|LABELS|EXTRACT|FILTER|TAIL|RANGE|REDUCE)(?=\\s*\\()",
           "name": "support.function.collection.cypher"
         },
         {
           "comment": "List of Cypher built-in functions from http://docs.neo4j.org/chunked/milestone/query-function.html",
-          "match": "(?i)\\b(ABS|ROUND|SQRT|SIGN)(?=\\s*\\()",
+          "match": "(?i)\\b(ABS|ACOS|ASIN|ATAN|ATAN2|COS|COT|DEGREES|E|EXP|FLOOR|HAVERSIN|LOG|LOG10|PI|RADIANS|RAND|ROUND|SIGN|SIN|SQRT|TAN)(?=\\s*\\()",
           "name": "support.function.math.cypher"
         },
         {
@@ -138,7 +147,7 @@
         },
         {
           "comment": "List of Cypher built-in functions from http://docs.neo4j.org/chunked/milestone/query-function.html",
-          "match": "(?i)\\b(STR|REPLACE|SUBSTRING|LEFT|RIGHT|LTRIM|RTRIM|TRIM|LOWER|UPPER)(?=\\s*\\()",
+          "match": "(?i)\\b(STR|REPLACE|SUBSTRING|LEFT|RIGHT|LTRIM|RTRIM|TRIM|LOWER|UPPER|SPLIT)(?=\\s*\\()",
           "name": "support.function.string.cypher"
         }
       ]
@@ -162,10 +171,10 @@
           "end": "(])(->|-)",
           "endCaptures": {
             "1": {
-              "name": "keyword.operator.relationship-patern-end.cypher"
+              "name": "keyword.operator.relationship-pattern-end.cypher"
             },
             "2": {
-              "name": "support.function.relationship-pattern-start.cypher"
+              "name": "support.function.relationship-pattern-end.cypher"
             }
           },
           "name": "path-pattern.cypher",
@@ -203,9 +212,10 @@
             },
             {
               "include": "#properties_literal"
-            }
+          }
+
           ]
-        }
+      }
       ]
     },
     "operators": {
@@ -219,7 +229,7 @@
           "name": "keyword.operator.compare.cypher"
         },
         {
-          "match": "(?i)\\b(OR|AND)\\b",
+          "match": "(?i)\\b(OR|AND|XOR|IS)\\b",
           "name": "keyword.operator.logical.cypher"
         },
         {
