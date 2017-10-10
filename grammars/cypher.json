@@ -138,8 +138,8 @@
           "name": "support.function.predicate.cypher"
         },
         {
-          "comment": "List of Cypher built-in functions from http://docs.neo4j.org/chunked/milestone/query-function.html",
-          "match": "(?i)\\b(LENGTH|TYPE|ID|COALESCE|HEAD|LAST|TIMESTAMP|STARTNODE|ENDNODE|TOINT|TOFLOAT)(?=\\s*\\()",
+          "comment": "List of Cypher built-in functions from https://neo4j.com/docs/developer-manual/current/cypher/functions/scalar/",
+          "match": "(?i)\\b(LENGTH|TYPE|ID|COALESCE|HEAD|LAST|TIMESTAMP|STARTNODE|ENDNODE|TOINT|TOINTEGER|TOFLOAT|PROPERTIES|SIZE|TOBOOLEAN|)(?=\\s*\\()",
           "name": "support.function.scalar.cypher"
         },
         {
